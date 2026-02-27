@@ -1,99 +1,65 @@
-# 🌉 Siemens Logic Bridge
-
-![Siemens Logic Bridge Hero](./siemens_logic_bridge_hero_1772215955669.png)
-
-> **Modern SCL Engineering Environment for IEC 61131-3 Standard**
-
-Siemens Logic Bridge is a professional development tool designed to bridge the gap between traditional Ladder Logic (KOP) and Structured Control Language (SCL). Built with an "Industrial Premium" aesthetic, it provides a high-performance environment for PLC programmers to design, translate, and manage logic blocks for TIA Portal.
+# 🌉 Siemens Logic Bridge 
+### *Industrial Engineering 4.0 Presentation*
 
 ---
 
-## 🚀 Main Features
+![Hero Cover](./siemens_logic_bridge_hero_1772215955669.png)
 
-### ⚡ Intelligent KOP to SCL Translator
-Convert contact logic descriptions into optimized SCL code instantly. The translator handles complex expressions, parentheses, and variable prefixing automatically.
-- **Example**: `(Start OR Auto) AND NOT Stop = Motor_Run` ➡️ `#Motor_Run := (#Start OR #Auto) AND NOT #Stop;`
-
-### 💻 Professional SCL Editor (Monaco Backend)
-A custom-tailored version of the Monaco Editor (VS Code engine) with dedicated syntax highlighting for Siemens SCL.
-- **Auto-completion**: Keywords like `IF`, `CASE`, `FOR`, `WHILE`.
-- **Snippet support**: Boilerplate templates for Motors, Scaling, and standard Function Blocks.
-
-### 🏢 Industrial UI/UX
-Designed with Siemens Blue and Deep Charcoal aesthetics, providing a dashboard with real-time statistics and block management.
-
-### 📦 Local Library & Exporting
-- **SQLite Persistence**: Your programs are saved locally for persistent engineering.
-- **TIA Portal Compatibility**: Export your code as `.scl` files ready to be used as external sources in TIA Portal.
+> **"Uniendo la automatización clásica con la ingeniería de software moderna."**
 
 ---
 
-## 🛠️ Tech Stack
+## 📽️ Presentación del Proyecto
 
-- **Frontend**: [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
-- **Backend**: [Node.js](https://nodejs.org/) + [Express](https://expressjs.com/)
-- **Database**: [SQLite](https://www.sqlite.org/) via [Sequelize](https://sequelize.org/)
-- **Styling**: Vanilla CSS (Tailored Design Tokens)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Editor**: [@monaco-editor/react](https://github.com/suren-atoyan/monaco-react)
+### 01. El Problema y la Solución
+En la industria, la transición de Ladder (KOP) a SCL puede ser lenta y propensa a errores. **Siemens Logic Bridge** actúa como un acelerador digital, permitiendo a los ingenieros concentrarse en la arquitectura mientras el sistema maneja la sintaxis.
+
+| 🗲 Transformación Visual | 🏭 Infraestructura |
+| :--- | :--- |
+| ![Traductor](./infografica_traductor_scl_1772216833429.png) | ![Arquitectura](./infografica_arquitectura_bridge_1772216847612.png) |
+| **Traducción en tiempo real** de lógica KOP a estándar IEC 61131-3. | **Puente Digital** entre TIA Portal y desarrollo Web moderno. |
 
 ---
 
-## 📦 Installation & Setup
+### 02. Capacidades de Ingeniería
+El sistema no es solo un traductor, es un entorno completo de preparación de datos para PLC S7-1200 y S7-1500.
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) (v16 or higher)
-- [npm](https://www.npmjs.com/)
+![Entorno](./infografica_entorno_ingenieria_1772216864177.png)
 
-### 1. Clone the Repository
-```bash
-git clone https://github.com/leohidalgovelasquez-max/Proyecto_SCL-IEC61131.git
-cd Proyecto_SCL-IEC61131
+---
+
+## 🛠️ Especificaciones Técnicas
+
+```mermaid
+graph TD
+    A[Lógica KOP / Usuario] -->|Entrada Texto| B(Traductor Inteligente)
+    B -->|Generación de Tokens| C{Validador SCL}
+    C -->|Éxito| D[Monaco Editor]
+    C -->|Error| E[Feedback Visual UI]
+    D -->|Persistencia| F[(SQLite DB)]
+    F -->|Exportación| G[.SCL External Source]
 ```
 
-### 2. Install Dependencies
-This project uses npm workspaces. Install everything with a single command from the root:
-```bash
-npm install
-```
-
-### 3. Run Development Servers
-Start both the Frontend and Backend concurrently:
-```bash
-npm run dev
-```
-- **Frontend**: [http://localhost:5173](http://localhost:5173)
-- **Backend API**: [http://localhost:3001](http://localhost:3001)
+### Stack Tecnológico
+- **Frontend**: UX Premium con React y Framer Motion.
+- **Backend**: Node.js + Sequelize.
+- **Editor**: Kernel de VS Code (Monaco Editor).
+- **Estándar**: Totalmente compatible con Siemens TIA Portal.
 
 ---
 
-## 📂 Project Structure
+## 📦 Instalación Rápida
 
-```text
-├── backend/            # Express server & SQLite database
-│   ├── models/         # Sequelize schemas
-│   └── index.js        # API endpoints
-├── frontend/           # React application
-│   ├── src/
-│   │   ├── components/ # Logic Translator & SCLEditor
-│   │   └── App.tsx     # Main application shell
-└── package.json        # Workspace configuration
-```
+1. **Clonar**: `git clone https://github.com/leohidalgovelasquez-max/Proyecto_SCL-IEC61131.git`
+2. **Instalar**: `npm install`
+3. **Lanzar**: `npm run dev`
 
 ---
 
-## 🌐 GitHub Pages Deployment
-
-The frontend of this project is prepared for deployment on GitHub Pages as a static demo.
-1. Build the frontend: `npm run build --workspace=frontend`
-2. Follow the instructions in the [Deployment Guide](DEPLOYMENT.md).
+## 🌐 Demo Online
+Explora la presentación interactiva del proyecto en:
+👉 **[https://leohidalgovelasquez-max.github.io/Proyecto_SCL-IEC61131/](https://leohidalgovelasquez-max.github.io/Proyecto_SCL-IEC61131/)**
 
 ---
 
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
-Developed with ❤️ for the Automation Community.
+© 2026 Desarrollado por **Leo Hidalgo Velasquez**.
