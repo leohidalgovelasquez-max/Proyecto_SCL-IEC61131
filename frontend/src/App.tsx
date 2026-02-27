@@ -5,6 +5,7 @@ import {
 } from 'lucide-react';
 import SCLEditor from './components/SCLEditor';
 import LogicTranslator from './components/LogicTranslator';
+import LandingPage from './components/LandingPage';
 import { SCL_TEMPLATES } from './templates';
 
 const API_BASE = 'http://localhost:3001/api';
@@ -23,7 +24,7 @@ function App() {
   const [currentProgram, setCurrentProgram] = useState<Partial<Program>>({});
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [isSaving, setIsSaving] = useState(false);
-  const [view, setView] = useState<'dashboard' | 'editor' | 'help'>('dashboard');
+  const [view, setView] = useState<'landing' | 'dashboard' | 'editor' | 'help'>('landing');
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => { fetchPrograms(); }, []);
@@ -116,6 +117,10 @@ function App() {
   };
 
   const validationErrors = useMemo(() => validateSCL(currentProgram.content || ''), [currentProgram.content]);
+
+  if (view === 'landing') {
+    return <LandingPage onEnter={() => setView('dashboard')} />;
+  }
 
   return (
     <div className="app-layout">
